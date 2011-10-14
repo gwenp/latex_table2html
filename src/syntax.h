@@ -43,8 +43,10 @@
      NUMBER = 259,
      BEGINTABLE = 260,
      LCR_ARGS = 261,
-     ENDTABLE = 262,
-     FIN = 263
+     TEX_EOL = 262,
+     TEX_ROWSEP = 263,
+     ENDTABLE = 264,
+     FIN = 265
    };
 #endif
 /* Tokens.  */
@@ -52,8 +54,10 @@
 #define NUMBER 259
 #define BEGINTABLE 260
 #define LCR_ARGS 261
-#define ENDTABLE 262
-#define FIN 263
+#define TEX_EOL 262
+#define TEX_ROWSEP 263
+#define ENDTABLE 264
+#define FIN 265
 
 
 

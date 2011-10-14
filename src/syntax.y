@@ -15,6 +15,9 @@
 %token BEGINTABLE
 %token LCR_ARGS
 
+%token TEX_EOL
+%token TEX_ROWSEP
+
 %token ENDTABLE
 
 %token FIN
@@ -27,6 +30,8 @@
 statement : NAME '=' expression
 			| expression {printf("%d\n",$1);}
 			| beginTable LCR_ARGS
+			| TEX_EOL    { printf("TEX_EOL\n"); }
+			| TEX_ROWSEP { printf("TEX_ROWSEP\n"); }
 			| endTable   { at_end = 1; }
 			| FIN 		 { at_end = 1; }
 			;

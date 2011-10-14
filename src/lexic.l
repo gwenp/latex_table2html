@@ -22,10 +22,13 @@ separator [ \t]
 " " | "\n" | "\t"	;
 
 begin\{tabular\}	{ return BEGINTABLE; }
-
 \{[a-zA-Z |]*\}	{ return LCR_ARGS; }
 
+\\\\	{ return TEX_EOL; }
+\&		{ return TEX_ROWSEP; }
+
 end\{tabular\}	{ return ENDTABLE; }
+
 [0-9]+			{yylval = atoi(yytext); printf("number = %d\n",yylval); return NUMBER; }
 {separator}		{} /* ignore */
 \n				{return f(0);}
